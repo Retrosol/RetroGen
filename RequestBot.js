@@ -26,6 +26,21 @@ console.log("Let's Make Some Pokemon!")
 
 client.on('message', message => {
   if (message.author === client.user) return;
+  if(message.isMentioned(client.user)) {
+message.channel.send(`Hello Everyone I am RetroGen.  I am a Pokemon Generating
+Bot that Accepts DM's of Pokemon Showdown Format Pokemon Teams 
+from http://pokemonshowdown.com/, Screenshots of Pokemon Teams Like This
+Pokemon Teams from http://pokepast.es/, and Lastly I can Accept PK7 Files from 
+PKHex.  I now have the ability to Check Pokemon for Legality. 
+Here is How, const pokemonToTest = { species: 'gligar', ability: 'immunity', moves: [ 'earthquake', 'roost', 'defog', 'u-turn' ] } 
+
+You will Then Be Given output
+Gligar can't learn Defog because it's incompatible with its ability.
+
+To Get started all you do is to DM Me a Screenshot or a Pokemon Team
+in the Proper Formatting. 
+`);
+}   
   if (message.channel.type != 'dm') {
     const guildID = message.member.guild.id
     if (!data[guildID]) {
